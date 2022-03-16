@@ -1,0 +1,41 @@
+{
+  "functions": {
+    "predeploy": [
+      "npm --prefix \"$RESOURCE_DIR\" run lint",
+      "npm --prefix \"$RESOURCE_DIR\" run build"
+    ],
+    "source": "functions"
+  },
+  "extensions": {
+    "translate": "firebase/firestore-translate-text",
+    "firestore-bigquery-export": "firebase/firestore-bigquery-export@^0.1.18",
+    "storage-resize-images": "firebase/storage-resize-images@^0.1.22",
+    "mirror": "firebase/storage-mirror-firestore"
+  },
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "functions": {
+      "port": 5001
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "database": {
+      "port": 9000
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "storage": {
+      "port": 9199
+    },
+    "ui": {
+      "enabled": true
+    }
+  },
+  "storage": {
+    "rules": "storage.rules"
+  }
+}

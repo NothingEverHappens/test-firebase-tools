@@ -1,0 +1,14 @@
+{
+  "name": "test-firebase-tools",
+  "version": "1.0.0",
+  "description": "Alright - so the new extension emulator code lives on a separate branch: https://github.com/firebase/firebase-tools/tree/launch.extensions-emulator To get that branch running on your machine: If you haven't done so before, `git clone https://github.com/firebase/firebase-tools.git` Then, go into that directory, and run git checkout launch.extensions-emulator Then, npm i and finally npm link At this point, when you run a firebase command, you'll be using the code from that branch Now, you need to go to a firebase project directory, and add some extensions To do that, go to firebase.json, and add an extensions section, like so:",
+  "main": "index.js",
+  "scripts": {
+    "test": "firebase --open-sesame extensionsemulator && START_LOGGING_EMULATOR=true firebase  emulators:exec  --ui --only firestore,storage,functions,auth,extensions,logging '(cd ../firebase-tools-ui && npm test)'",
+    "build": "(cd functions && tsc --watch)",
+    "start": "firebase --open-sesame extensionsemulator && START_LOGGING_EMULATOR=true firebase  emulators:exec  --ui --only firestore,storage,functions,auth,extensions,logging '(cd ../firebase-tools-ui && npm start)'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
